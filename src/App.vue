@@ -1,18 +1,27 @@
 <template>
-  <exo2 />
+<navbar />
+<RouterView />
 </template>
 
 <script>
-import exo2 from './components/exo2.vue'
+//import acceuil from '@/components/Rick/Accueil.vue'
+import navbar from '@/components/Rick/Navbar.vue'
 
 
 export default {
   name: 'App',
   components: {
-    exo2
+    //acceuil,
+    navbar,
   }
+
 }
 </script>
 
 <style>
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #97ce4c
+}
 </style>
