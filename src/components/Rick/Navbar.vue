@@ -37,6 +37,9 @@
         <li class="nav-item">
           <RouterLink class="nav-link" to="/personnage/1">Personnage</RouterLink>
         </li>
+        <li class="nav-item">
+          <RouterLink class="nav-link" to="/rechercher">Rechecher</RouterLink>
+        </li>
       </ul>
       <!-- Left links --> 
     </div>

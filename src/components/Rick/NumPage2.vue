@@ -4,11 +4,9 @@
       <li class="page-item disabled">
         <a class="page-link" href="#" tabindex="-1">Previous</a>
       </li>
-      <li v-for="page in totalPages" :key="page" class="page-item">
-        <RouterLink class="page-link" :to='"/personnage/" + page'>{{ page }}</RouterLink>
-      </li>
+      <p>/ {{ totalPages }}</p>
       <li class="page-item">
-        <a class="page-link" href="#">Next</a>
+        <RouterLink class="page-link" :to='"/personnage/" + 3 '> {{ nextPage }} </RouterLink>
       </li>
     </ul>
   </nav>
@@ -18,10 +16,9 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  props: { totalPages: Number },
+  props: { totalPages: Number, nextPage: String, previousPage: Number},
   data: () => {
-    return {
-    };
+    return {};
   },
 });
 </script>

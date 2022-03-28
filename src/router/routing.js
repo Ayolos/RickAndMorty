@@ -7,6 +7,7 @@ import Accueil from '../components/Rick/Accueil.vue'
 import Personnage from '../components/Rick/Personnage.vue'
 import Erreur from '../components/Rick/Erreur.vue'
 import Location from '../components/Rick/Location.vue'
+import Rechercher from '../components/Rick/Rechercher.vue'
 
 const router = createRouter({
     history: createWebHistory(),
@@ -16,6 +17,7 @@ const router = createRouter({
         { path: '/location/:id', name: 'location', component: Location, props:true },
         { path: '/404', name: 'erreur', component: Erreur },
         { path: '/:catchAll(.*)', redirect:'/404'},
+        { path: '/rechercher', name: 'rechercher', component: Rechercher},
     ]
     
 })

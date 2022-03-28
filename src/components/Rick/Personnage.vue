@@ -50,6 +50,7 @@ export default defineComponent({
     this.$watch(
       () => this.$route.params,
       () => {
+        console.log(this.$route.params)
         this.fetchData()
       },
       { immediate: true }
