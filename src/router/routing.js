@@ -13,7 +13,7 @@ const router = createRouter({
     history: createWebHistory(),
     routes: [
         { path: '/', name: 'accueil', component: Accueil },
-        { path: '/personnage/:page', name: 'personnage', component: Personnage, props:true },
+        { path: '/personnage/:currentPage', name: 'personnage', component: Personnage, props:true },
         { path: '/location/:id', name: 'location', component: Location, props:true },
         { path: '/404', name: 'erreur', component: Erreur },
         { path: '/:catchAll(.*)', redirect:'/404'},

@@ -2,7 +2,7 @@
   <div>
     <barreDeRecherche @updateData="handleChildData" />
     <div class="container">
-      <div v-if="data && !erreur" class="row">
+      <div v-if="data && !error" class="row">
         <div v-for="data in data.results" :key="data" class="col-sm-6 p-5">
           <div class="card h-100 bg-col">
             <img :src="data.image" class="card-img-top" alt="..." />
@@ -26,7 +26,7 @@
           </div>
         </div>
       </div>
-      <div v-else-if="erreur" style="margin: 70px">
+      <div v-else-if="error" style="margin: 70px">
         <Erreur />
       </div>
     </div>
@@ -46,27 +46,27 @@ export default defineComponent({
   },
   data() {
     return {
-      nom: "",
-      data: null,
-      erreur: false,
+      name: "",
+      data: null, //variable qui récupère les infos des personnages
+      error: false,
     };
   },
   
    methods: {
     handleChildData(payload) {
-      this.nom = payload;
+      this.name = payload;
 
     }
   },
    watch: {
-    nom: function(newnom) {
+    name: function(newName) {
       axios
-        .get("https://rickandmortyapi.com/api/character/?name=" + newnom)
+        .get("https://rickandmortyapi.com/api/character/?name=" + newName)
         .then((reponse) => {
           this.data = reponse.data;
-          this.erreur = false;
+          this.error = false;
         }).catch(() => {
-            this.erreur = true;
+            this.error = true;
         });
     },
   },

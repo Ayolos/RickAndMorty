@@ -18,22 +18,22 @@
         </ul>
       </div>
       <h1 class="text-center"><u>Résident :</u></h1>
-      <div v-if="dataPerso" class="row justify-content-md-center">
-        <div v-for="data in dataPerso" :key="data" class="col-sm-4 p-2">
+      <div v-if="dataCharacters" class="row justify-content-md-center">
+        <div v-for="dataCharacter in dataCharacters" :key="dataCharacter" class="col-sm-4 p-2">
           <div class="card h-100 bg-col w-100" style="width: 18rem;">
-            <img :src="data.image" class="card-img-top" alt="..." />
+            <img :src="dataCharacter.image" class="card-img-top" alt="..." />
             <div class="card-body bg-col">
-              <h5 class="card-title">{{ data.name }}</h5>
+              <h5 class="card-title">{{ dataCharacter.name }}</h5>
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item bg-col">
-                Status : <strong>{{ data.status }}</strong>
+                Status : <strong>{{ dataCharacter.status }}</strong>
               </li>
               <li class="list-group-item bg-col">
-                Species : <strong>{{ data.species }}</strong>
+                Species : <strong>{{ dataCharacter.species }}</strong>
               </li>
               <li class="list-group-item bg-col">
-                Gender : <strong>{{ data.gender }}</strong>
+                Gender : <strong>{{ dataCharacter.gender }}</strong>
               </li>
             </ul>
           </div>
@@ -52,7 +52,7 @@ export default defineComponent({
   data: () => {
     return {
       dataLocation: null,
-      dataPerso: null,
+      dataCharacters: null,
       list: [],
     };
   },
@@ -64,7 +64,7 @@ export default defineComponent({
         this.getDataCharacter();
       })
       .catch(() => {
-        //this.$router.push("/404");
+        this.$router.push("/404");
       });
   },
   methods: {
@@ -78,11 +78,10 @@ export default defineComponent({
     },
     getDataCharacter() {
       var listId = this.getCharacter();
-      console.log();
       axios
         .get("https://rickandmortyapi.com/api/character/" + listId)
         .then((reponse) => {
-          this.dataPerso = reponse.data;
+          this.dataCharacters = reponse.data;
         });
     },
   },
@@ -100,7 +99,4 @@ export default defineComponent({
   background-color: #e4a788;
 }
 
-.card-img-top {
-    border-radius: 10px;
-}
 </style>

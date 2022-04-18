@@ -4,17 +4,16 @@
 </template>
 
 <script>
-//import acceuil from '@/components/Rick/Accueil.vue'
 import navbar from '@/components/Rick/Navbar.vue'
-
 
 export default {
   name: 'App',
   components: {
-    //acceuil,
     navbar,
+  },
+  mounted() {
+    this.$store.commit('initData', JSON.parse(localStorage.getItem('data')));
   }
-
 }
 </script>
 
