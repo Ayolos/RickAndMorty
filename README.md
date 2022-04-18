@@ -1,11 +1,12 @@
 # Rick and Morty 
 
-Bienvenue sur mon site Rick et morty
-Ce site à pour but de vous renseignez sur les personnages de Rick et morty
+Bienvenu sur mon site Rick et Morty.
+
+Ce site a pour but de vous renseigner sur les personnages de Rick et Morty
 Pour ce faire vous aurez l'onglet : 
-- Acceuil dans lequel vous pourrez voir vos personnage récemment visité
-- Personnage dans lequel vous pouvez consulter tout les personnage de rick et morty
-- Rechercher dans lequel vous pouvez rechercher un personnage spcécifique
+- Accueil dans lequel vous pourrez voir vos personnages récemment visités
+- Personnage dans lequel vous pouvez consulter tous les personnages de rick et morty
+- Rechercher dans lequel vous pouvez rechercher un personnage spécifique
 
 
 ## Mise en place du projet
