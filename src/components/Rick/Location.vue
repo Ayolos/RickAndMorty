@@ -3,21 +3,25 @@
     <div class="container bg-yel">
       <div class="jumbotron jumbotron-fluid">
         <div class="container text-center">
+          <!-- si il n'a pas de donnée dans dataLocation il ne l'affiche pas -->
           <h1 v-if="dataLocation" class="display-4">{{ dataLocation.name }}</h1>
           <h3>Information</h3>
         </div>
       </div>
       <div class="d-flex justify-content-center">
         <ul class="list-group text-center" style="width: 100%">
+          <!-- si il n'a pas de donnée dans dataLocation il ne l'affiche pas -->
           <li v-if="dataLocation" class="list-group-item">
             {{ dataLocation.type }}
           </li>
+          <!-- si il n'a pas de donnée dans dataLocation il ne l'affiche pas -->
           <li v-if="dataLocation" class="list-group-item">
             {{ dataLocation.dimension }}
           </li>
         </ul>
       </div>
       <h1 class="text-center"><u>Résident :</u></h1>
+      <!-- si il n'a pas de donnée dans dataCharaters il ne l'affiche pas -->
       <div v-if="dataCharacters" class="row justify-content-md-center">
         <div v-for="dataCharacter in dataCharacters" :key="dataCharacter" class="col-sm-4 p-2">
           <div class="card h-100 bg-col w-100" style="width: 18rem;">
@@ -48,11 +52,15 @@ import { defineComponent } from "vue";
 import axios from "axios";
 
 export default defineComponent({
+  // récupère l'id de l'url
   props: { id: String },
   data: () => {
     return {
+      // récupère les informations de la Location
       dataLocation: null,
+      // récupère les informations des peronnages
       dataCharacters: null,
+      // liste tout les id des personnages que l'on a besoin de rechercher
       list: [],
     };
   },
@@ -64,10 +72,12 @@ export default defineComponent({
         this.getDataCharacter();
       })
       .catch(() => {
+        // si il ne trouve pas les données envoie une erreur
         this.$router.push("/404");
       });
   },
   methods: {
+    // fonction qui ajoute les id des personnages dans la liste
     getCharacter() {
       var urlPerso = this.dataLocation.residents;
       for (var i = 0; i < urlPerso.length; i++) {

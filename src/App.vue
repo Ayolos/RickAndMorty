@@ -12,6 +12,7 @@ export default {
     navbar,
   },
   mounted() {
+    // initialise les données du localStorage
     this.$store.commit('initData', JSON.parse(localStorage.getItem('data')));
   }
 }

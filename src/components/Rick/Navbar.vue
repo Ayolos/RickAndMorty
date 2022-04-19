@@ -32,12 +32,15 @@
       <!-- Left links -->
       <ul class="navbar-nav me-auto mb-3 mb-lg-0">
         <li class="nav-item">
+          <!-- router vers qui redirige vers le composant Accueil -->
           <RouterLink class="nav-link" to="/">Accueil</RouterLink>
         </li>
         <li class="nav-item">
+          <!-- router vers qui redirige vers le composant Personnage -->
           <RouterLink class="nav-link" to="/personnage/1">Personnage</RouterLink>
         </li>
         <li class="nav-item">
+          <!-- router vers qui redirige vers le composant Rechercher -->
           <RouterLink class="nav-link" to="/rechercher">Rechecher</RouterLink>
         </li>
       </ul>
